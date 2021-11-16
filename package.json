@@ -1,16 +1,20 @@
 {
-  "name": "royalpet_api",
+  "engines": {
+    "node": "16.x"
+  },
+  "name": "backend_royalpet",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dbserver": "nodemon index.js"
+    "start": "nodemon index.js"
   },
-  "author": "Royal_pet",
+  "author": "Javier Perez",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^6.0.12",
+    "mongodb": "^4.1.4",
+    "mongoose": "^6.0.13",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
