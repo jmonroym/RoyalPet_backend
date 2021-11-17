@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
-const database = "royalpetdb";
+const database = "Royal_pet_database";
 const password = "admin";
 const URI =
   "mongodb+srv://admin:" +
   password +
-  "@cluster0.kpir7.mongodb.net/" +
+  "@cluster0.zk8ij.mongodb.net/" +
   database +
   "?retryWrites=true&w=majority";
 
