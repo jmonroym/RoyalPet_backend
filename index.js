@@ -10,7 +10,7 @@ app.use(express.json());
 
 //Lista de rutas base
 app.use("/api/productos", require("./routes/productos.routes"));
-
+app.use("/api/usuarios", require("./routes/registro_usuarios.routes"));
 //Arranque
 app.listen(app.get("port"), () => {
   console.log(

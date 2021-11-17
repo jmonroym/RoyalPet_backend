@@ -5,10 +5,16 @@ operaciones.getProducto = async function(req, res){
   const dato = await coleccionProductos.findById(req.params.id);
   res.json(dato);
 }
-operaciones.getProductos = async function(req, res) {
-  const datos = await coleccionProductos.find();
-  res.json(datos);
-};
+//operaciones.getProductos = async function(req, res) {
+  //const datos = await coleccionProductos.find();
+  //res.json(datos);
+//};
+operaciones.getProductosFiltro = async function(req, res){
+  const filtro = await coleccionProductos.find({
+    oferta:false
+  }).exec();
+  res.json(filtro);
+}
 operaciones.crearProducto = async function(req, res){
 const producto = new coleccionProductos(req.body);
 await producto.save();
@@ -23,7 +29,8 @@ operaciones.actualizarProducto = async function(req, res){
     raza: req.body.raza,
     precio: req.body.precio,
     oferta: req.body.oferta,
-    tamano: req.body.tamano
+    tamanio: req.body.tamanio,
+    categoria: req.body.categoria
   }
   console.log(producto)
   await coleccionProductos.findByIdAndUpdate(req.params.id, {$set: producto}, {new:true});

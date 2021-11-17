@@ -8,6 +8,7 @@ const esquema = new Schema({
   raza: { type: String, required: true },
   precio: { type: Number, required: true },
   oferta: { type: Boolean, required: true },
-  tamano: { type: String, required: true }
+  tamanio: { type: String, required: true },
+  categoria: {type: String, required: true}
 });
 module.exports = mongoose.model("Producto", esquema);
