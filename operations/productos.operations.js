@@ -5,10 +5,12 @@ operaciones.getProducto = async function(req, res){
   const dato = await coleccionProductos.findById(req.params.id);
   res.json(dato);
 }
-//operaciones.getProductos = async function(req, res) {
-  //const datos = await coleccionProductos.find();
-  //res.json(datos);
-//};
+
+operaciones.getProductos = async function(req, res) {
+  const datos = await coleccionProductos.find();
+  res.json(datos);
+};
+
 operaciones.getProductosFiltro = async function(req, res){
   const filtro = await coleccionProductos.find({
     oferta:false
