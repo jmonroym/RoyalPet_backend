@@ -1,6 +1,13 @@
 const coleccionRegistro_usuarios = require("../schemas/registro_usuarios.schema");
 const operaciones = {};
 
+
+operaciones.getUsuario = async function(req, res) {
+
+		const usuario = await coleccionRegistro_usuarios.find(req.query)
+		res.json(usuario)
+}
+
 operaciones.crearUsuario = async function(req, res){
 const registro = new coleccionRegistro_usuarios(req.body);
 await registro.save();
