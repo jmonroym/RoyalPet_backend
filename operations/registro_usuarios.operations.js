@@ -5,6 +5,11 @@ operaciones.getUsuario = async function(req, res) {
   const usuario = await coleccionRegistro_usuarios.find(req.query);
   res.json(usuario);
 };
+//todos los usuarios
+operaciones.getUsuarios = async function(req, res) {
+  const datos = await coleccionRegistro_usuarios.find();
+  res.json(datos);
+};
 
 operaciones.crearUsuario = async function(req, res) {
   const registro = new coleccionRegistro_usuarios(req.body);
