@@ -8,6 +8,5 @@ const esquema = new Schema({
   numero_celular: { type: Number, required: true },
   fecha_nacimiento: { type: String, required: true },
   cedula: { type: Number, required: true }
-
 });
 module.exports = mongoose.model("Registro_usuario", esquema);
