@@ -36,4 +36,9 @@ operaciones.actualizarUsuario = async function(req, res) {
   res.json({ status: "usuario actualizado" });
 };
 
+operaciones.borrarUsuario = async function(req, res) {
+  await coleccionRegistro_usuarios.findByIdAndRemove(req.params.id);
+  res.json({ status: "Usuario eliminado" });
+};
+
 module.exports = operaciones;
